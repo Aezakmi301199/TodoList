@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todoshka</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header flex2Col">
+            <ul class='nav'>
+                <li><a href='index.html'>Главная</a></li>
+                <li><a href='category.html'>Задачи</a></li>
+            </ul>
+            <div class='flex-490res'>
+                <div class='header-right'>
+                <a class='header-btn reg-link'>Регистрация</a>
+                <a class='header-btn login-link'>Вход</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="list_top">
+                <h1>Список задач</h1>
+                <button class="cyan noselect" id = 'open_modal_task'>Создать задачу</button>
+            </div>
+            <div class="inputs_stonk">
+                <h2 class="stonk"> Сортировка по дате обновления:</h2>
+                <button class = 'bunner-btn' id="btn_sort_increasing">По возрастанию</button>
+                <button class = 'bunner-btn' id="btn_sort_off_increasing">По убыванию</button>
+            </div>
+        </div>
+        <div class="container color-without">
+            <h2 id = 'to30px'>Задачи</h2>
+            <ul class='list-task' id = 'list-task'>
+            </ul>
+        </div>
+    </div>
+    <section class="container modal_task">
+        <div class="col">
+            <input required id='name-task' type='text' placeholder='Заголовок'>
+            <input required id='deskription-task' type='text' placeholder='Введите задачу'>
+            <button class = 'cyan noselect' id='add_task'>Добавить задачу</button>
+            <div class='input_form time-form'>
+                <label for='completeDay'><h3>Дата завершения</h3></label>
+                <input class='without_border' required id='completeDay' type='date'>
+            </div>
+            <div class='input_form time-form'>
+                <label for='completeTime'><h3>Время завершения</h3></label>
+                <input class='without_border' required id='completeTime' type='time'>
+            </div>
+            <div class='input_form bg-purple'>
+                <label for='task_worker'><h3>Сотрудник</h3></label>
+                <input  class='without_border' required id='task_worker' type='text' placeholder="Иванов Иван Иванович">
+            </div>
+            <div class='input_form bg-purple'>
+                <label for='user_chief'><h3>Руководитель</h3></label>
+                <input class='without_border' required id='user_chief' type='text' placeholder="Чехов Антон Павлович">
+            </div>
+            <div class='input_form bg-purple'>
+                <label for='task_priority'><h3>Приоритет задачи</h3></label>
+                <select required name = 'priority' id='task_priority' >
+                    <option value="Высокий">Высокий</option>
+                    <option value="Средний">Средний</option>
+                    <option value="Низкий">Низкий</option>
+                </select>
+            </div>
+            <div class='input_form bg-purple'>
+                <label for='task_status'><h3>Статус задачи</h3></label>
+                <select required name = 'priority' id='task_status' >
+                    <option value="К выполнению">К выполнению</option>
+                    <option value="Выполняется">Выполняется</option>
+                    <option value="Выполнена">Выполнена</option>
+                    <option value="Отменена">Отменена</option>
+                </select>
+            </div>
+            <button class="modal-close close_modal_task" type="button">
+            </button>
+        </div>
+    </section>
+    <section class='login'>
+		<div class='wrapper'>
+			<form action='#' method="get" class='form-center modal-login'>
+				<fieldset>
+					<legend><h2 class='text-title-OpenSans'>Авторизация</h2></legend>
+					<div class='input_form'>
+						<label for='user-name-join'><h2>Логин</h2></label>
+						<input required type='text' id='user-name-join'  name='login' placeholder='admimadminov' >
+					</div>
+					<div class='input_form'>
+						<label for='user-password-join'><h2>Пароль</h2></label>
+						<input required type='password' autocomplete =off id='user-password-join' name='password' placeholder='********' >
+					</div>
+					<div class='btn-joib'>
+						<input type='submit' value='Войти'>
+					</div>
+					<div>
+						<label class='login-checkbox'>
+							<input type='checkbox' name='remember' class='visually-hidden'>
+							<span class='checkbox-indicator'>Запомните меня</span>
+						</label>
+					</div>
+					<div class='input_form'>
+						<a  href='#' class='forget'>Забыли пароль?</a>
+					</div>
+				</fieldset>
+				<button class='modal-close close_login' type='button'></button>
+			</form>
+		</div>
+	</section>
+	<section class='reg'>
+		<div class='wrapper'>
+			<form action='#' method="get" class='form-center modal-reg'>
+				<legend><h2 class='text-title-OpenSans'>Регистрация</h2></legend>
+					<fieldset>
+						<div class='input_form'>
+							<label for='user-name-reg'><h2>Логин</h2></label>
+							<input required type='text' id='user-name-reg' placeholder='admimadminov' >
+						</div>
+						<div class='input_form'>
+							<label for='user-password-reg'><h2>Пароль</h2></label>
+							<input required type='password' id='user-password-reg' autocomplete =off placeholder='********' >
+						</div>
+						<div class='input_form'>
+							<label for='user-password2'><h2>Повторите пароль</h2></label>
+							<input required type='password' id='user-password2-reg' autocomplete =off placeholder='********' >
+						</div>
+						<div class='input_form'>
+							<label for='user-tel'><h2>Номер телефона</h2></label>
+							<input required type='tel' id='user-tel' placeholder='8800553535' >
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class='input_form'>
+							<label for='user-fio'><h2>Фамилия</h2></label>
+							<input required type='text' id='user-fio' placeholder='Чехов' >
+						</div>
+						<div class='input_form'>
+							<label for='user-name'><h2>Имя</h2></label>
+							<input required type='text' id='user-name' placeholder='Антон' >
+						</div>
+						<div class='input_form'>
+							<label for='user-middle-name'><h2>Отчество</h2></label>
+							<input required type='text' id='user-middle-name' placeholder='Павлович' >
+						</div>
+						<div class='input_form'>
+							<label for='user-status'><h2>Позиция</h2></label>
+                            <select required name = 'position' id='user-position' >
+                                <option value="Worker">Сотрудник</option>
+                                <option value="chief">Руководитель</option>
+                            </select>
+						</div>
+					</fieldset>
+					<div class='flex-center'>
+						<div class='btn-joib'>
+							<input type='submit' value='Регистрация'></input>
+						</div>
+					</div>
+					<button class='modal-close close-reg' type='button'>
+					</button>
+			</form>
+		</div>
+	</section>
+</body>
+</html>
